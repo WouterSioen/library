@@ -775,7 +775,7 @@ class SpoonFilter
 		$value = (string) $value;
 
 		// build regexp
-		$pattern = '/(((http|ftp|https):\/{2})?(([0-9a-z_-]+\.)+(' . implode('|', self::$tlds) . ')(:[0-9]+)?((\/([~0-9a-zA-Z\#\+\%@\.\/_-]+))?(\?[0-9a-zA-Z\+\%@\/&\[\];=_-]+)?)?))\b/imu';
+		$pattern = '/(((http|ftp|https):\/{2})?(([0-9a-z_-]+\.)+(' . implode('|', self::$tlds) . ')(:[0-9]+)?((\/([~0-9a-zA-Z\:\#\+\%@\.\/_-]+))?(\?[0-9a-zA-Z\:\+\%@\/&\[\];=_-]+)?)?))\b/imu';
 
 		// get matches
 		$value = preg_replace_callback($pattern, array('SpoonFilter', 'replaceURLsCallback'), $value);
